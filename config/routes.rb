@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  #get 'sessions/new'
 
   resources :users
-  resources :sessions
+
 
   #get "sessions",           to: "sessions#index", as: :sessions
-  post "sessions",          to: "sessions#create"
-  #get "sessions/new",       to: "sessions#new", as: :new_session
-  get "/sessions/welcome",  to: "sessions#welcome", as: :welcomes
+  post "/sessions",          to: "sessions#create"
+  get "sessions/new",       to: "sessions#new", as: :new_session
+  get "/sessions/welcome",  to: "sessions#welcome", as: :welcome
+  delete "/sessions/destroy", to: "sessions#destroy", as: :destroy_session
 
 
 
