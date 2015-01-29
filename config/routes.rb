@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+  #get 'sessions/new'
+
   resources :users
+  resources :sessions
+
+  #get "sessions",           to: "sessions#index", as: :sessions
+  post "sessions",          to: "sessions#create"
+  #get "sessions/new",       to: "sessions#new", as: :new_session
+
+
+
 
   root 'home#index'
 
