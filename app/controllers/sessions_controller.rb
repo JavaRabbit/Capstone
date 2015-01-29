@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def welcome
-    @user = User.find_by_email(params[:email])
+    @user = User.find_by(id: session[:user_id])
   end
 
 end
