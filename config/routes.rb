@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   #get "sessions",           to: "sessions#index", as: :sessions
   post "sessions",          to: "sessions#create"
   #get "sessions/new",       to: "sessions#new", as: :new_session
-  get "/sessions/welcome",  to: "sessions#welcome", as: :welcome
+  get "/sessions/welcome",  to: "sessions#welcome", as: :welcomes
 
 
 
