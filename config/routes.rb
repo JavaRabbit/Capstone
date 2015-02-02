@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "/sessions/welcome",  to: "sessions#welcome", as: :welcome
   delete "/sessions/destroy", to: "sessions#destroy", as: :destroy_session
 
+  get "accounts/new",       to: "accounts#new", as: :new_account
+
 
 
 
