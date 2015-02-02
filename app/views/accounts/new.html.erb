@@ -1,9 +1,31 @@
 <h2>Create a new account</h2>
 <div>
+<%= form_for (@account) do |a| %>
 
+
+  <div>
+    <%= a.label :name %>
+    <%= a.text_field :name %>
+  </div>
+
+
+  <div>
+    <%= a.label :description %>
+    <%= a.text_field :description %>
+  </div>
+
+  <div>
+    <%= a.label :startBalance %>
+    <%= a.text_field :startBalance %>
+  </div>
+
+  <%= a.submit "Create this new account" %>
+
+<% end %>
 
 </div>
 
+<br><br>
 <p>
 <%= link_to "Go back to your account", welcome_path %>
 </p>
