@@ -36,6 +36,7 @@ end
 
 gem 'bootstrap-sass'
 gem 'httparty'
+gem 'yahoo-finance'
 
 
 
