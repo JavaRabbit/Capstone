@@ -1,0 +1,7 @@
+<h3>Add a stock to your feed</h3>
+
+<%= form_for Feed.new do |f| %>
+  <%= f.text_field :ticker %>
+  <%= f.submit "Add this stock" %>
+
+<% end %>
