@@ -9,7 +9,16 @@ Welcome User <%= @user.email %>
 <h3>List of all your accounts</h3>
   <div id="specAccounts">
   <%=render @user.accounts %>
+
+  <% @user.accounts.each do |u| %>
+    <%= u.startBalance %>
+    <% end %>
+
   <div>
+</div>
+
+<div id="searchStocks">
+  <h3>Search for Stocks</h3>
 </div>
 
 <div id="searchStocks">
