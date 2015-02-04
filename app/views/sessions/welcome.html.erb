@@ -8,18 +8,32 @@ Welcome User <%= @user.email %>
 <div id="allAccounts">
 <h3>List of all your accounts</h3>
   <div id="specAccounts">
-  <%=render @user.accounts %>
+  <!-- <%=render @user.accounts %> -->
 
-  <% @user.accounts.each do |u| %>
-    <%= u.startBalance %>
+  <table border = "1">
+    <tr>
+      <td>Account Name</td>
+      <td>Start Balance </td>
+    </tr>
+
+
+    <% @user.accounts.each do |u| %>
+      <tr>
+        <td><%=u.name %></td>
+        <td><%= u.startBalance %></td>
+      </tr>
     <% end %>
-
-  <div>
+  </table>
+  
+  </div>
 </div>
 
-<div id="searchStocks">
-  <h3>Search for Stocks</h3>
+
+
+<div id="allStocks">
+  <h3>All your stocks and their current prices</h3>
 </div>
+
 
 <div id="searchStocks">
   <h3>Search for Stocks</h3>
