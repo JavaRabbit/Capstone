@@ -4,7 +4,21 @@ class FeedsController < ApplicationController
   end
 
   def create
-    redirect_to root_path
+    @feed = Feed.new(feeds_params)
+    if @feed.save
+      flash[:ticker] = @feed.id
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
+
+  private
+
+  def feeds_params
+    params.require(:feed).permit(:ticker)
+  end
+
+
 
 end
