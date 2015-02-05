@@ -6,6 +6,8 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(feeds_params)
     if @feed.save
+      @uf = UserFeed.new(feed_id: @feed.id, user_id: session[:user_id])
+      @uf.save
       flash[:ticker] = @feed.id
       redirect_to root_path
     else
