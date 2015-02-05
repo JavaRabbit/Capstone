@@ -6,6 +6,11 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(feeds_params)
     if @feed.save
+      # These two lines are for mailing the user
+      # when they added a stock to their feed
+      @user = User.find_by(id: session[:user_id])
+      UserMailer.stockAdd_confirmation(@user).deliver
+
       @uf = UserFeed.new(feed_id: @feed.id, user_id: session[:user_id])
       @uf.save
       flash[:ticker] = @feed.id
