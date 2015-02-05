@@ -32,6 +32,19 @@ Welcome User <%= @user.email %>
 
 <div id="allStocks">
   <h3>All your stocks and their current prices</h3>
+
+  <table border="1">
+    <tr>
+      <td>Ticker Symbol</td>
+    </tr>
+
+    <% @user.feeds.each do |f| %>
+      <tr>
+        <td><%= f.ticker %></td>
+      </tr>
+    <% end %>
+
+  </table>
 </div>
 
 
