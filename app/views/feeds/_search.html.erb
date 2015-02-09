@@ -1,5 +1,7 @@
 <h3>Add a stock to your feed</h3>
+<h5>Select whether you would like to recieve a confirmation email</h5>
 
+<input type="checkbox" id="post_validate" checked="checked">
 <%= form_for Feed.new do |f| %>
   <%= f.text_field :ticker %>
   <%= f.submit "Add this stock" %>
