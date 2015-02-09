@@ -39,6 +39,17 @@ gem 'httparty'
 gem 'yahoo-finance'
 
 
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem "capistrano-passenger"
+end
+
+gem 'therubyracer', platforms: :ruby
+
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: newport_production
-  username: newport
+  username: ubuntu
   password: <%= ENV['NEWPORT_DATABASE_PASSWORD'] %>
