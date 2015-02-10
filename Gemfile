@@ -38,6 +38,8 @@ gem 'bootstrap-sass'
 gem 'httparty'
 gem 'yahoo-finance'
 
+gem 'feedjira'
+
 
 group :development do
   gem 'capistrano'
