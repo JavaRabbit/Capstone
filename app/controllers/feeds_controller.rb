@@ -20,6 +20,16 @@ class FeedsController < ApplicationController
     end
   end
 
+  def delete
+    @feed = Feed.find_by(id: params[:id])
+  end
+
+  def destroy
+    @feed = Feed.find_by(id: params[:id])
+    @feed.destroy
+    redirect_to root_path
+  end
+
   private
 
   def feeds_params

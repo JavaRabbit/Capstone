@@ -42,13 +42,14 @@ Welcome User <%= @user.email %>
 
     <% @user.feeds.each do |f| %>
 
-      <!-- some ruby comments go here -->
+
       <% gg = YahooFinance.quotes([f.ticker]) %>
       <% hh = gg[0].last_trade_price %>
       <tr>
         <td><%= f.id %></td>
         <td><%= f.ticker %></td>
         <td><%= hh %></td>
+        <td><%= link_to "Delete this stock", delete_feed_path(f.id) %> </td>
       </tr>
     <% end %>
 
