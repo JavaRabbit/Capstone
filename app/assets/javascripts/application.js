@@ -14,3 +14,13 @@
 //= require jquery_ujs
 
 //= require_tree .
+
+
+$(function()
+{
+     $("a#toggle").click(function()
+     {
+         $("#contact").slideToggle();
+         return false;
+     });
+});
