@@ -63,5 +63,8 @@ Welcome User <%= @user.email %>
 
 
 <div id="newsFeeds">
-  News goes heres
+  <h3>News goes here</h3>
+  <% NewsEntry.all.each do |p| %>
+    <li><%= p.name %></li>
+  <% end %>
 </div>

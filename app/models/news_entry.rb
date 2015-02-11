@@ -17,7 +17,5 @@ class NewsEntry < ActiveRecord::Base
     end
   end
 
-  def dog
-    puts "rff"
-  end
+  
 end
