@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get "accounts/new",       to: "accounts#new", as: :new_account
   post "/accounts",         to: "accounts#create",  as: :accounts
+  get "accounts/:id",        to: "accounts#show",    as: :account
 
   post "/feeds/",            to: "feeds#create", as: :feeds
 

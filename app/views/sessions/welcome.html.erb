@@ -17,10 +17,10 @@ Welcome User <%= @user.email %>
     </tr>
 
 
-    <% @user.accounts.each do |u| %>
+    <% @user.accounts.each do |account| %>
       <tr>
-        <td><a href="#" id="toggle"><%=u.name %></a></td>
-        <td><%= u.startBalance %></td>
+        <td><%= link_to "#{account.name}", account %></td>
+        <td><%= account.startBalance %></td>
       </tr>
     <% end %>
   </table>
@@ -30,7 +30,9 @@ Welcome User <%= @user.email %>
 
 
 <div id="contact">
-  The account is:
+  The account is this is in the div:
+  <br><br>
+  <%= render "accounts/show" %>
 </div>
 <a href="#" id="toggle">Contact</a>
 

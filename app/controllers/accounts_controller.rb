@@ -5,11 +5,18 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(subject_params)
-    @account.user_id = current_user.id 
+    @account.user_id = current_user.id
     if @account.save
       flash[:name] = @account.id
       redirect_to root_path
     else
+      redirect_to root_path
+    end
+  end
+
+  def show
+    @account = Account.find_by(id: params[:id])
+    if @account == nil
       redirect_to root_path
     end
   end
