@@ -47,6 +47,8 @@ Welcome User <%= @user.email %>
       <td>Ticker id </td>
       <td>Ticker Symbol</td>
       <td>Stock Price </td>
+      <td>Delete Stock</td>
+      <td>Buy this stock</td>
     </tr>
 
     <% @user.feeds.each do |f| %>
@@ -59,11 +61,16 @@ Welcome User <%= @user.email %>
         <td><%= f.ticker %></td>
         <td><%= hh %></td>
         <td><%= link_to "Delete this stock", delete_feed_path(f.id) %> </td>
+        <td>ugh</td>
       </tr>
     <% end %>
 
   </table>
 </div>
+
+
+
+
 
 
 <div id="searchStocks">

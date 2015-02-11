@@ -50,6 +50,7 @@ group :development do
 end
 
 gem 'therubyracer', platforms: :ruby
+gem 'jquery-modal-rails'
 
 
 
