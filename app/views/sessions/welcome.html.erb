@@ -19,7 +19,7 @@ Welcome User <%= @user.email %>
 
     <% @user.accounts.each do |u| %>
       <tr>
-        <td><%=u.name %></td>
+        <td><a href="#" id="toggle"><%=u.name %></a></td>
         <td><%= u.startBalance %></td>
       </tr>
     <% end %>
@@ -28,8 +28,9 @@ Welcome User <%= @user.email %>
   </div>
 </div>
 
+
 <div id="contact">
-    Contact me!
+  The account is:
 </div>
 <a href="#" id="toggle">Contact</a>
 
