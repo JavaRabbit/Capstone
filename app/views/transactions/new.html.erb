@@ -36,6 +36,7 @@ the current feed is: <%= @feed.id %>
 
 
   <%= t.hidden_field :feed_id, value: @feed.id %>
+  <%= t.hidden_field :buyDate, value: Time.now %>
 
   <%= t.submit "Create this new transaction" %>
 
