@@ -2,6 +2,10 @@ class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
     @transaction.account_id = current_user.id
+    @feed = Feed.find_by(id: params[:id])
+
+    
+
   end
 
   def create

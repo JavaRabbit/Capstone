@@ -63,7 +63,7 @@ Welcome User <%= @user.email %>
         <td><%= f.ticker %></td>
         <td><%= hh %></td>
         <td><%= link_to "Delete this stock", delete_feed_path(f.id) %> </td>
-        <td><%= link_to "buy this stock", new_transaction_path%></td>
+        <td><%= link_to "buy this stock", new_transaction_path(f.id)%></td>
       </tr>
     <% end %>
 
