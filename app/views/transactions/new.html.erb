@@ -28,10 +28,11 @@ the current feed is: <%= @feed.id %>
 
   <br>
   <div>
-    Which of your account would you like to allocate to?<br>
-    <%= t.label :Account %>
-    <%= t.text_field :numBought %>
+    Which account?<br>
+    <%= t.label :account_id %>
+    <%= t.text_field :account_id %>
   </div>
+
 
 
   <%= t.submit "Create this new transaction" %>
