@@ -50,16 +50,17 @@ Welcome User <%= @user.email %>
     <tr>
       <td>Ticker id (aka Feed.id)</td>
       <td>Ticker Symbol</td>
-      <td>Stock Price </td>
+      <td>Ask Price </td>
       <td>Delete Stock</td>
       <td>Buy this stock</td>
     </tr>
 
     <% @user.feeds.each do |f| %>
 
-
       <% gg = YahooFinance.quotes([f.ticker]) %>
       <% hh = gg[0].last_trade_price %>
+
+
       <tr>
         <td><%= f.id %></td>
         <td><%= f.ticker %></td>
