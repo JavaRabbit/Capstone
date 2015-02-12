@@ -1,0 +1,23 @@
+<h3>Create a new transaction</h3>
+
+
+The current user is <%= @transaction.account_id %>
+
+
+<div>
+<%= form_for (@transaction) do |t| %>
+
+  <div>
+    <%= t.label :feed_id %>
+    <%= t.text_field :feed_id %>
+  </div>
+
+
+  <%= t.submit "Create this new transaction" %>
+
+<% end %>
+
+</div>
+
+<br><br>
+<%= link_to "Go back to your account", welcome_path %>

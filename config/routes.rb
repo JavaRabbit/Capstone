@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get "/feeds/delete/:id", to: "feeds#delete", as: :delete_feed
   delete "/feeds/:id",      to: "feeds#destroy", as: :destroy
 
+  get "/transactions/new",   to: "transactions#new", as: :new_transaction
+  post "/transactions",       to: "transactions#create", as: :transactions
+
 
 
 

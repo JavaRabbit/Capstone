@@ -14,6 +14,7 @@ Welcome User <%= @user.email %>
     <tr>
       <td>Account Name</td>
       <td>Start Balance </td>
+      <td>Current Balance</td>
     </tr>
 
 
@@ -21,6 +22,7 @@ Welcome User <%= @user.email %>
       <tr>
         <td><%= link_to "#{account.name}", account %></td>
         <td><%= account.startBalance %></td>
+        <td><%= account.currentBalance %></td>
       </tr>
     <% end %>
   </table>
@@ -44,7 +46,7 @@ Welcome User <%= @user.email %>
 
   <table border="1">
     <tr>
-      <td>Ticker id </td>
+      <td>Ticker id (aka Feed.id)</td>
       <td>Ticker Symbol</td>
       <td>Stock Price </td>
       <td>Delete Stock</td>
@@ -61,7 +63,7 @@ Welcome User <%= @user.email %>
         <td><%= f.ticker %></td>
         <td><%= hh %></td>
         <td><%= link_to "Delete this stock", delete_feed_path(f.id) %> </td>
-        <td>ugh</td>
+        <td><%= link_to "buy this stock", new_transaction_path%></td>
       </tr>
     <% end %>
 
