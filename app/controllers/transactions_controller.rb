@@ -17,6 +17,10 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def all
+    @user.id = current_user.id
+  end
+
 
   private
 

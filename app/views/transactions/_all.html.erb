@@ -1,0 +1,29 @@
+
+
+<h3>All Transactions</h3>
+
+<table border="1">
+  <tr>
+    <td>Transaction ID</td>
+    <td>Ticker Symbol</td>
+    <td>Ask Price </td>
+    <td>Delete Stock</td>
+
+  </tr>
+
+  <% @user.accounts.each do |a| %>
+    <% a.transactions.each do |t| %>
+
+
+
+    <tr>
+      <td><%= t.id %></td>
+      <td><%= t.feed_id %></td>
+      <td>blah</td>
+      <td>blah2</td>
+
+    </tr>
+    <% end %>
+  <% end %>
+
+</table>
