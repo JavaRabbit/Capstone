@@ -1,1 +1,6 @@
 <h2>This is the transaction show page</h2>
+
+this is transaction: <%= @transaction.id %>
+<br>
+<% @feed = Feed.find(@transaction.feed_id) %>
+the feed is: <%= @feed.ticker %>
