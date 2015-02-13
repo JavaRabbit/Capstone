@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get "/transactions/new/:id",   to: "transactions#new", as: :new_transaction
   post "/transactions",       to: "transactions#create", as: :transactions
+  get "transaction/:id",      to: "transactions#show",    as: :transaction
 
 
 

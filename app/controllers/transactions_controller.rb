@@ -19,6 +19,11 @@ class TransactionsController < ApplicationController
 
   def all
     @user.id = current_user.id
+    @feed = Feed.find_by(id: params[:id])
+  end
+
+  def show
+    @transaction = Transaction.find_by(id: params[:id])
   end
 
 
