@@ -5,6 +5,11 @@ Welcome to the
 The current balance is <%= @account.startBalance %>
 
 <br><br>
+
+<% if @account.transactions.count != 0 %>
+
+Currently this account has <%= @account.transactions.count %> transactions.
+
 <h3>List of all account transactions</h3>
 
 <table border = "1">
@@ -26,4 +31,14 @@ The current balance is <%= @account.startBalance %>
   <% end %>
 </table>
 <br>
+
+<% else %>
+
+  You have no transactions.
+
+<% end %>
+
+<br>
+
+
 <%= link_to("Back Home", root_path) %>
