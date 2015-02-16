@@ -7,19 +7,13 @@ the current feed is: <%= @feed.id %>
 <br>
 <h3>Buy form for:   <%= @feed.ticker %></h3>
 
+<h3>The current bid price is: <%= @transaction.buyPrice %> </h3>
 
 <br><br>
 
 <div>
 <%= form_for (@transaction) do |t| %>
 
-  <!-- Delete this -->
-  <div>
-    <%= t.label :feed_id %>
-    <%= t.text_field :feed_id%>
-  </div>
-
-  <br>
   <div>
     How many shares would you like to buy?<br>
     <%= t.label :number_Of_Shares %>

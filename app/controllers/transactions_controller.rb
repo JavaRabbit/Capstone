@@ -3,6 +3,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
     @transaction.account_id = current_user.id
     @feed = Feed.find_by(id: params[:id])
+    @transaction.buyPrice = params[:price]
 
 
 
