@@ -8,8 +8,11 @@
   <tr>
     <td>Transaction ID</td>
     <td>feed_id</td>
-    <td>Ask Price </td>
+    <td>Account Name</td>
+    <td>Buy Price </td>
     <td>Delete Stock</td>
+    <td>Date of Purchase</td>
+    <td>Number of shares purchsed</td>
 
   </tr>
 
@@ -19,9 +22,11 @@
     <tr>
       <td><%= link_to "#{t.id}", t %></td>
       <td><%= t.feed_id %></td>
-
-      <td></td>
+      <td><%= a.name %> </td>
+      <td><%= t.buyPrice %></td>
       <td>blah2</td>
+      <td><%= t.buyDate %></td>
+      <td><%= t.numBought %></td>
 
     </tr>
     <% end %>
