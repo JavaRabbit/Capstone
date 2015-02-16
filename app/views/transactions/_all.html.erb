@@ -1,4 +1,4 @@
-
+<!-- This is the all transactions page  -->
 
 <h3>All Transactions</h3>
 
@@ -10,7 +10,7 @@
     <td>feed_id</td>
     <td>Account Name</td>
     <td>Buy Price </td>
-    <td>Delete Stock</td>
+    <td>Sell Stock</td>
     <td>Date of Purchase</td>
     <td>Number of shares purchsed</td>
 
@@ -21,10 +21,10 @@
 
     <tr>
       <td><%= link_to "#{t.id}", t %></td>
-      <td><%= t.feed_id %></td>
+      <td><%= Feed.find(t.feed_id).ticker %></td>
       <td><%= a.name %> </td>
       <td><%= t.buyPrice %></td>
-      <td>blah2</td>
+      <td><%= link_to "sell", sell_path(t) %></td>
       <td><%= t.buyDate %></td>
       <td><%= t.numBought %></td>
 

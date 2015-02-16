@@ -27,6 +27,10 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find_by(id: params[:id])
   end
 
+  def sell
+    @transaction = Transaction.find_by(id: params[:id])
+  end
+
 
   private
 
