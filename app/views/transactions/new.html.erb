@@ -23,11 +23,13 @@ the current feed is: <%= @feed.id %>
   <br>
   <div>
     Which account?<br>
-    <%= t.label :account_id %>
-    <%= t.text_field :account_id %>
+
+    <%= t.label :which_account %>
+    <!-- <%= select(:account_id, :account_id, Account.where(:user_id => current_user).collect { |a| [a.name] })%> -->
+    <%= collection_select :transaction, :account_id, Account.where(:user_id => current_user), :id, :name %>
   </div>
 
-
+  <br>
 
   <%= t.hidden_field :feed_id, value: @feed.id %>
   <%= t.hidden_field :buyDate, value: Time.current %>
