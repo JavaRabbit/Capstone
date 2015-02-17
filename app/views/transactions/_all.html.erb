@@ -12,7 +12,7 @@
     <td>Buy Price </td>
     <td>Date of Purchase</td>
     <td>Current Price </td>
-
+    <td>Percent Change</td>
   </tr>
 
   <% @user.accounts.each do |a| %>
@@ -28,7 +28,7 @@
       <td><%= t.buyDate %></td>
       <% gg = YahooFinance.quotes([Feed.find(t.feed_id).ticker]) %>
       <td><%= gg[0].last_trade_price %></td>
-
+      <td>Change goes here</td>
     </tr>
     <% end %>
   <% end %>
