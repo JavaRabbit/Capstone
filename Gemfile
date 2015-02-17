@@ -53,6 +53,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-modal-rails'
 
 gem "stock_quote"
+gem "whenever"
 
 
 
