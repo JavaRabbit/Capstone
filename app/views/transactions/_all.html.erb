@@ -52,7 +52,7 @@
   </tr>
 
     <% @user.accounts.each do |a| %>
-    <% a.transactions.each do |t| %>
+    <% a.transactions.where.not(:sellPrice => nil ).each do |t| %>
 
     <tr>
       <td><%= link_to "sell", sell_path(t) %></td>
