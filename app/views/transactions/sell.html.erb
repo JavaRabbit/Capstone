@@ -22,6 +22,7 @@
   </div>
 
   <%= t.hidden_field :id, value: @transaction.id %>
+  <%= t.hidden_field :sellDate, value: Time.current %>
 
 <%= t.submit "Sell" %>
 
