@@ -1,9 +1,32 @@
-<h2>Sell your stock</h2>
+<h2>Preview Sell Order</h2>
 
-this is transaction: <%= @transaction.id %>
+<h3>Transaction ID: <%= @transaction.id %> </h3>
 <br>
 
 
+
+
+<h3>Account Name: </h3>
+
+<%= form_for (@transaction) do |t| %>
+
+
+
+  <h3>THe current sell price is </h3>
+
+
+  <div>
+    Confirm the sell price:<br>
+    <%= t.label :sell_price %>
+    <%= t.text_field :sellPrice %>
+  </div>
+
+  <%= t.hidden_field :id, value: @transaction.id %>
+
+<%= t.submit "Sell" %>
+
+
+<% end %>
 
 <br>
 <%= link_to "Go back to your account", welcome_path %>

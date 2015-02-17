@@ -29,6 +29,17 @@ class TransactionsController < ApplicationController
 
   def sell
     @transaction = Transaction.find_by(id: params[:id])
+    @transaction.sellPrice = params[:price]
+  end
+
+
+  def update
+    @transaction = Transaction.find_by(id: params[:id])
+    if @transaction.update_attributes(transaction_params)
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
 
