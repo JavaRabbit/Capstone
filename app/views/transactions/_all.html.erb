@@ -11,7 +11,7 @@
     <td>Quantity</td>
     <td>Buy Price </td>
     <td>Date of Purchase</td>
-    <td>Sold Price </td>
+    <td>Current Price </td>
 
   </tr>
 
@@ -26,7 +26,8 @@
       <td><%= t.numBought %></td>
       <td><%= t.buyPrice %></td>
       <td><%= t.buyDate %></td>
-      <td><%= t.sellPrice %></td>
+      <% gg = YahooFinance.quotes([Feed.find(t.feed_id).ticker]) %>
+      <td><%= gg[0].last_trade_price %></td>
 
     </tr>
     <% end %>
@@ -40,7 +41,6 @@
 
 <table border="1">
   <tr>
-    <td>Sell Stock</td>
     <!-- <td>Transaction ID</td> -->
     <td>feed_id</td>
     <td>Account Name</td>
@@ -55,7 +55,6 @@
     <% a.transactions.where.not(:sellPrice => nil ).each do |t| %>
 
     <tr>
-      <td><%= link_to "sell", sell_path(t) %></td>
       <!-- <td><%= link_to "#{t.id}", t %></td> -->
       <td><%= Feed.find(t.feed_id).ticker %></td>
       <td><%= a.name %> </td>
