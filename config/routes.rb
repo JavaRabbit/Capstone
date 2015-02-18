@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get "/transactions/sell/:id",   to: "transactions#sell", as: :sell
   patch "/transaction/:id",      to: "transactions#update",  as: :update
 
+  get "/news",                  to: "news#show", as: :news
+
 
 
 

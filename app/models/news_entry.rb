@@ -16,14 +16,6 @@ class NewsEntry < ActiveRecord::Base
     end
   end
 
-  def update_from_feed_continuously(feed_url, delay_interval = 15.second)
-    feed = Feedjira::Feed.fetch_and_parse("http://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo&region=US&lang=en-US")
-    add_entries(feed.entries)
-    loop do
-      sleep delay_interval
-      feed = Feedjira::Feed.update(feed)
-      add_entries(feed.new_entries)
-  end
 
   private
 
@@ -38,5 +30,5 @@ class NewsEntry < ActiveRecord::Base
       aa.save
     end
   end
-end
+
 end
