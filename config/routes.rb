@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   post "/transactions",       to: "transactions#create", as: :transactions
   get "transaction/:id",      to: "transactions#show",    as: :transaction
 
+  get "transactions/all/:id",    to: "transactions#all",     as: :transactions_all
+
   get "/transactions/sell/:id",   to: "transactions#sell", as: :sell
   patch "/transaction/:id",      to: "transactions#update",  as: :update
 
