@@ -6,6 +6,7 @@
 
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -23,7 +24,7 @@
 
       <% if current_user %>
         <ul class="nav navbar-nav navbar-right">
-          <p class="navbar-text navbar-right">Logged in as <%= current_user.email %></p>
+          <p class="navbar-text navbar-left">Logged in as <%= current_user.email %></p>
           <li><%= link_to "Log Out", destroy_session_path, method: :delete, class:"active" %></li>
         </ul>
         <% else %>
@@ -39,7 +40,20 @@
 
 
 
-<%= yield %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <h2>Accounts</h2>
+      <h2>Transactions</h2>
+      <h2>Watchlist</h2>
+      <h2>Alerts</h2>
+      <h2>NewsFeed</h2>
+    </div>
+    <div class="col-md-10"><%= yield %></div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

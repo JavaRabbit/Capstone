@@ -19,14 +19,14 @@
     <% a.transactions.where(:sellPrice => nil).each do |t| %>
 
     <tr>
-      <td><%= link_to "sell", sell_path(t) %></td>
+      <% gg = YahooFinance.quotes([Feed.find(t.feed_id).ticker]) %>
+      <td><%= link_to "sell", sell_path(t, :price => gg[0].last_trade_price) %></td>
       <!-- <td><%= link_to "#{t.id}", t %></td> -->
       <td><%= Feed.find(t.feed_id).ticker %></td>
       <td><%= a.name %> </td>
       <td><%= t.numBought %></td>
       <td><%= t.buyPrice %></td>
       <td><%= t.buyDate %></td>
-      <% gg = YahooFinance.quotes([Feed.find(t.feed_id).ticker]) %>
       <td><%= gg[0].last_trade_price %></td>
       <td>Change goes here</td>
     </tr>

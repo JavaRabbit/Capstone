@@ -4,9 +4,9 @@ class History < ActiveRecord::Base
     hh = gg[0].last_trade_price.to_i
     pp = 421.to_i
     if hh > pp
-      puts "#{hh} is bigger"
+      #puts "#{hh} is bigger"
     else
-      puts "pp is bigger"
+      #puts "pp is bigger"
     end
   end
 end
