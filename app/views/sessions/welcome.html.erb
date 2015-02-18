@@ -34,7 +34,7 @@ Welcome User <%= @user.email %>
 
 
 <div id="allTrans">
-  
+
 </div>
 
 
@@ -79,20 +79,8 @@ Welcome User <%= @user.email %>
 </div>
 
 
-
-
-
-
 <div id="searchStocks">
   <%= render "feeds/search" %>
-</div>
-
-
-<div id="newsFeeds">
-  <h3> Cached! News goes here</h3>
-  <% NewsEntry.all.each do |p| %>
-    <li><%= p.name %></li>
-  <% end %>
 </div>
 
 
