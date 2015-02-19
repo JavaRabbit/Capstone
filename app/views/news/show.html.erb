@@ -1,11 +1,17 @@
 <!-- News#show  show.html.erb page -->
 
 <div id="newsFeeds2">
-  <h3>More news feeds up to date</h3>
+  <h3>News Feeds</h3>
+  <h5>Courtesty Yahoo </h5>
   <% f1 = Feedjira::Feed.fetch_and_parse("http://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo&region=US&lang=en-US") %>
   <% f1.entries.each do |entry| %>
     <li><%= entry.title %></li>
   <% end %>
+
+</div>
+
+<div>
+  <h3>Ticker News Feeds</h3>
 
 </div>
 

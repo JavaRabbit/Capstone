@@ -5,7 +5,7 @@
 <table border="1">
   <tr>
     <td>Sell Stock</td>
-    <!-- <td>Transaction ID</td> -->
+    <td>Transaction ID</td>
     <td>feed_id</td>
     <td>Account Name</td>
     <td>Quantity</td>
@@ -13,6 +13,7 @@
     <td>Date of Purchase</td>
     <td>Current Price </td>
     <td>Percent Change</td>
+    <td>Cash Value Change</td>
   </tr>
 
   <% @user.accounts.each do |a| %>
@@ -21,14 +22,15 @@
     <tr>
       <% gg = YahooFinance.quotes([Feed.find(t.feed_id).ticker]) %>
       <td><%= link_to "sell", sell_path(t, :price => gg[0].last_trade_price) %></td>
-      <!-- <td><%= link_to "#{t.id}", t %></td> -->
+      <td><%= link_to "#{t.id}", t %></td>
       <td><%= Feed.find(t.feed_id).ticker %></td>
       <td><%= a.name %> </td>
       <td><%= t.numBought %></td>
       <td><%= t.buyPrice %></td>
       <td><%= t.buyDate %></td>
       <td><%= gg[0].last_trade_price %></td>
-      <td>Change goes here</td>
+      <td><%= ( (( gg[0].last_trade_price.to_f - t.buyPrice) / t.buyPrice ) * 100) %></td>
+      <td><%= ( gg[0].last_trade_price.to_f - t.buyPrice ) * t.numBought%></td>
     </tr>
     <% end %>
   <% end %>
@@ -37,11 +39,11 @@
 
 <br>
 
-<h3>Closed Transaction </h3>
+<h3>Closed Transactions </h3>
 
 <table border="1">
   <tr>
-    <!-- <td>Transaction ID</td> -->
+    <td>Transaction ID</td>
     <td>feed_id</td>
     <td>Account Name</td>
     <td>Quantity</td>
@@ -55,7 +57,7 @@
     <% a.transactions.where.not(:sellPrice => nil ).each do |t| %>
 
     <tr>
-      <!-- <td><%= link_to "#{t.id}", t %></td> -->
+      <td><%= link_to "#{t.id}", t %></td>
       <td><%= Feed.find(t.feed_id).ticker %></td>
       <td><%= a.name %> </td>
       <td><%= t.numBought %></td>
