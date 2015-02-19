@@ -1,2 +1,20 @@
-<h1>Alerts#all</h1>
-<p>Find me in app/views/alerts/all.html.erb</p>
+<h3> User: <%= @user.id %> </h3>
+
+<h3>Your Account Alerts </h3>
+
+<% @user.accounts.each do |a| %>
+  <% if a.alerts.any? %>
+    You have account alerts
+  <% end %>
+<% end %>
+
+<h3> Your transaction Alerts </h3>
+  <% bb = Account.where(:user_id => @user.id).each do |b| %>
+    <% b.transactions.each do |t| %>
+      <% if t.alerts.any? %>
+        <% t.alerts.each do |a| %>
+          Alert for <%= t.id %> set at <%= a.high %><br>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
