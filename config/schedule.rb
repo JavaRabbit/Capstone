@@ -19,6 +19,9 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.minute do
-  runner "History.dog"
-end
+
+# I turned off the cron job -> see below
+
+# every 1.minute do
+#   runner "History.dog"
+# end

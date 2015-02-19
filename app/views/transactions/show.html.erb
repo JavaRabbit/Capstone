@@ -9,4 +9,15 @@ this is transaction: <%= @transaction.id %>
 
 <h2>The buy date is <%= @transaction.buyDate %>
 
-<h3>The buy price is <%= @transaction.buyPrice %>
+<h3>The buy price is <%= @transaction.buyPrice %></h3>
+
+<%  if @transaction.alerts.any? %>
+
+  <h3>Open Alerts</h3>
+  
+  <% @transaction.alerts.each do |a| %>
+    Alert set at <%= a.high %>
+  <% end %>
+
+
+<% end %>
