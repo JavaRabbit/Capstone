@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'alerts/all'
+
   get 'feeds/new'
 
   resources :users
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
 
   get "/news",                  to: "news#show", as: :news
 
-
+  get "/alerts",                to: "alerts#all", as: :alerts
 
 
   root 'home#index'

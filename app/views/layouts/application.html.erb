@@ -19,7 +19,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"  id="myTitle">Ada Stock Picker</a>
+      <a class="navbar-brand"  id="myTitle" ><%= link_to "Ada Stock Picker", root_path, {style: "font-size: 200%"} %></a>
     </div> <!-- end of navbar-header -->
 
       <% if current_user %>
@@ -51,7 +51,7 @@
       <h2>Accounts</h2>
       <h2><%= link_to "Transactions", transactions_all_path(current_user.id) %><h2>
       <h2>Watchlist</h2>
-      <h2>Alerts</h2>
+      <h2><%= link_to "Alerts", alerts_path %></h2>
       <h2><%= link_to "NewsFeed", news_path %></h2>
     </div>
 
