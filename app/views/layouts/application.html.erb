@@ -13,7 +13,7 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="myNav" >
   <div class="container-fluid" >
     <div class="navbar-header" >
-      <a class="navbar-brand" >Picker</a>
+      <a class="navbar-brand"  id="myTitle">Ada Stock Picker</a>
     </div> <!-- end of navbar-header -->
 
       <% if current_user %>
@@ -39,7 +39,7 @@
 
 <% if current_user %>
 
-<div class="container" style="border: 1px solid black;">
+<div class="container-fluid" style="border: 1px solid black;">
   <div class="row">
     <div class="col-md-2">
       <h2>Accounts</h2>
@@ -60,7 +60,6 @@
       <div class="col-md-10"><%= yield %></div>
   </div>
 </div>
-
 
 
 </body>
