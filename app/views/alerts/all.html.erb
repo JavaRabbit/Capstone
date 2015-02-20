@@ -40,8 +40,22 @@
 <h3> Your Feed Alerts </h3>
   <% @user.feeds.each do |f| %>
   <% if f.alerts.any? %>
+      <table border="1">
+        <tr>
+          <td>Ticker Name</td>
+          <td>Alert High</td>
+          <td>Alert Low</td>
+        </tr>
+
     <% f.alerts.each do |a| %>
-      Alert for <%= f.ticker %> set at <%= a.low %><br>
+
+      <tr>
+        <td><%= f.ticker%></td>
+        <td><%= a.high %></td>
+        <td><%= a.low %></td>
+      </tr>
     <% end %>
+    </table>
+
   <% end %>
 <% end %>
