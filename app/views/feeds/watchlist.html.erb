@@ -1,0 +1,36 @@
+<h2>Watchlist</h2>
+
+<div id="allStocks">
+  <h3>All your stocks and their current prices</h3>
+
+  <table border="1">
+    <tr>
+      <td>Ticker id (aka Feed.id)</td>
+      <td>Ticker Symbol</td>
+      <td>Ask Price </td>
+      <td>Delete Stock</td>
+      <td>Buy this stock</td>
+    </tr>
+
+    <% @user.feeds.each do |f| %>
+
+      <% gg = YahooFinance.quotes([f.ticker]) %>
+      <% hh = gg[0].last_trade_price %>
+
+
+      <tr>
+        <td><%= f.id %></td>
+        <td><%= f.ticker %></td>
+        <td><%= hh %></td>
+        <td><%= link_to "Delete this stock", delete_feed_path(f.id) %> </td>
+        <td><%= link_to "buy this stock", new_transaction_path(f.id, :price => hh)%></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
+
+
+<div id="searchStocks">
+  <%= render "feeds/search" %>
+</div>

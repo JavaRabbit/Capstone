@@ -30,6 +30,10 @@ class FeedsController < ApplicationController
     redirect_to root_path
   end
 
+  def watchlist
+    @user = User.find_by(id: session[:user_id])
+  end
+
   private
 
   def feeds_params

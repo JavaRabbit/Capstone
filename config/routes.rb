@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "accounts/:id",        to: "accounts#show",    as: :account
 
   post "/feeds/",            to: "feeds#create", as: :feeds
+  get "/feeds/",              to: "feeds#watchlist", as: :watchlist
 
   get "/feeds/delete/:id", to: "feeds#delete", as: :delete_feed
   delete "/feeds/:id",      to: "feeds#destroy", as: :destroy

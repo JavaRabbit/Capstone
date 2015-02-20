@@ -1,4 +1,4 @@
-<h3> User: <%= @user.id %> </h3>
+<h3> Welcome <%= @user.email %> to your alerts. </h3>
 
 <h3>Your Account Alerts </h3>
 
@@ -12,9 +12,27 @@
   <% bb = Account.where(:user_id => @user.id).each do |b| %>
     <% b.transactions.each do |t| %>
       <% if t.alerts.any? %>
+        <table border="1">
+          <tr>
+            <td>Transaction ID</td>
+            <td>Transaction Ticker</td>
+            <td>Account</td>
+            <td>Alert High</td>
+            <td>Alert Low</td>
+            <td>Notification</td>
+          </tr>
         <% t.alerts.each do |a| %>
-          Alert for <%= t.id %> set at <%= a.high %><br>
+          <tr>
+            <td><%= t.id %></td>
+            <td><%= Feed.find(t.feed_id).ticker %></td>
+            <td><%= b.name %></td>
+            <td><%= a.high %></td>
+            <td><%= a.low %></td>
+            <td><%= a.sent %></td>
+          <tr>
+
         <% end %>
+        </table>
       <% end %>
     <% end %>
   <% end %>
