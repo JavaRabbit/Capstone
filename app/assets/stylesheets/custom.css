@@ -6,3 +6,11 @@ body {
   font-size: 100%;
   vertical-align: middle;
 }
+
+/*tr:nth-child(even) {
+    background-color: gray;
+}*/
+
+#theNav{
+  font-family: 'Dancing Script', cursive;
+}

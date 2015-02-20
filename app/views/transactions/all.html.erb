@@ -1,5 +1,5 @@
 <!-- This is the all transactions page  -->
-
+<br><br>
 <h3>Open Transactions</h3>
 
 <table border="1">
@@ -21,7 +21,7 @@
 
     <tr>
       <% gg = YahooFinance.quotes([Feed.find(t.feed_id).ticker]) %>
-      <td><%= link_to "sell", sell_path(t, :price => gg[0].last_trade_price) %></td>
+      <td><%= link_to "Sell", sell_path(t, :price => gg[0].last_trade_price), {style: "color: #FF5050"} %></td>
       <td><%= link_to "#{t.id}", t %></td>
       <td><%= Feed.find(t.feed_id).ticker %></td>
       <td><%= a.name %> </td>

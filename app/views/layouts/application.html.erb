@@ -7,6 +7,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -45,9 +46,10 @@
 
 <% if current_user %>
 
-<div class="container-fluid" style="border: 1px solid black;">
+<div class="container-fluid" >
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3" id="theNav">
+      <br>
       <h2>Accounts</h2>
       <h2><%= link_to "Transactions", transactions_all_path(current_user.id) %><h2>
       <h2><%= link_to "Watchlist", watchlist_path %></h2>
@@ -57,7 +59,7 @@
 
 <% end %>
 
-  <div class="col-md-9" style="border: 1px solid black;">
+  <div class="col-md-9" >
     <%= yield %>
   </div>
 
