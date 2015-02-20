@@ -18,3 +18,12 @@
       <% end %>
     <% end %>
   <% end %>
+
+<h3> Your Feed Alerts </h3>
+  <% @user.feeds.each do |f| %>
+  <% if f.alerts.any? %>
+    <% f.alerts.each do |a| %>
+      Alert for <%= f.ticker %> set at <%= a.low %><br>
+    <% end %>
+  <% end %>
+<% end %>
