@@ -14,3 +14,12 @@ body {
 #theNav{
   font-family: 'Dancing Script', cursive;
 }
+
+.tableCenter {
+  margin: 0 auto;
+
+}
+
+#allStocks {
+  margin: 0 auto;
+}
