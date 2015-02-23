@@ -31,7 +31,7 @@
         <td><%= f.ticker %></td>
         <td><%= hh %></td>
         <td><%= link_to "Delete this stock", delete_feed_path(f.id) %> </td>
-        <td><%= link_to "buy this stock", new_transaction_path(f.id, :price => hh)%></td>
+        <td><%= link_to "Buy this stock", new_transaction_path(f.id, :price => hh)%></td>
       </tr>
     <% end %>
 

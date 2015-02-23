@@ -1,4 +1,7 @@
-<h2>Create a new account</h2>
+
+<br><br>
+
+<h2 style="font-family: 'Armata', sans-serif;">Create a new account</h2>
 <div>
 <%= form_for (@account) do |a| %>
 
@@ -8,17 +11,19 @@
     <%= a.text_field :name %>
   </div>
 
-
+  <br>
   <div>
     <%= a.label :description %>
     <%= a.text_field :description %>
   </div>
 
+  <br>
   <div>
     <%= a.label :startBalance %>
     <%= a.text_field :startBalance %>
   </div>
 
+  <br>
   <%= a.submit "Create this new account" %>
 
 <% end %>
