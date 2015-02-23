@@ -4,7 +4,8 @@
   <br><br>
   <h3 style="font-family: 'Armata', sans-serif;">News Feeds</h3>
   <h5 style="font-family: 'Armata', sans-serif;">Courtesy Yahoo </h5>
-  <% f1 = Feedjira::Feed.fetch_and_parse("http://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo,goog&region=US&lang=en-US") %>
+  <!-- <% f1 = Feedjira::Feed.fetch_and_parse("http://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo,goog&region=US&lang=en-US") %> -->
+  <% f1 = Feedjira::Feed.fetch_and_parse("http://finance.yahoo.com/rss/topfinstories") %>
   <% f1.entries.each do |entry| %>
     <li><%= entry.title %></li>
   <% end %>
@@ -12,7 +13,32 @@
 </div>
 
 <div>
-  <h3 style="font-family: 'Armata', sans-serif;">Ticker News Feeds</h3>
+  <h3 style="font-family: 'Armata', sans-serif;">Custom Ticker News Feeds</h3>
+  <!-- get all of the users ticker feed names -->
+
+  <!-- The current user is <%= @user.id %> -->
+  <br>
+
+  <% p4 = "" %>
+  <% aa = @user %>
+  <% aa.feeds.each do |f| %>
+    <% p4 = p4 + "," + f.ticker %>
+  <% end %>
+
+  <!-- Chop off the first comma of p4 -->
+  <% p5 = p4[1..-1] %>
+
+  <% p1 = "http://feeds.finance.yahoo.com/rss/2.0/headline?s=" %>
+  <% p3="&region=US&lang=en-US" %>
+
+  <% finalStr = p1 + p5 + p3 %>
+  <% finalStr %>
+
+  <% f1 = Feedjira::Feed.fetch_and_parse(finalStr) %>
+  <% f1.entries.each do |entry| %>
+    <li><%= entry.title %></li>
+  <% end %>
+
 
 </div>
 
