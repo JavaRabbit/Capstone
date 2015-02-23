@@ -1,0 +1,47 @@
+<br><br>
+
+<h3>Create a new Alert</h3>
+
+<h4> Type has to be Feed, Transaction, or Account</h4>
+<br>
+
+<div>
+
+  <%= form_for (@alert) do |a| %>
+
+  <div>
+    What is the high price?<br>
+    <%= a.label :High_price %>
+    <%= a.text_field :high %>
+  </div>
+
+  <br>
+  <div>
+    What is the LOW price?<br>
+    <%= a.label :Low_price %>
+    <%= a.text_field :low %>
+  </div>
+
+
+  <br>
+  <div>
+    What is ID?<br>
+    <%= a.label :id %>
+    <%= a.text_field :alertable_id %>
+  </div>
+
+
+
+  <br>
+  <div>
+    What is Alertable Type?<br>
+    <%= a.label :type %>
+    <%= a.text_field :alertable_type %>
+  </div>
+
+  <%= a.submit "Create this new alert" %>
+
+  <% end %>
+
+
+</div>

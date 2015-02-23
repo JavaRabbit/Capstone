@@ -34,7 +34,9 @@ Rails.application.routes.draw do
 
   get "/news",                  to: "news#show", as: :news
 
-  get "/alerts",                to: "alerts#all", as: :alerts
+  get "/alerts",                to: "alerts#all", as: :all_alerts
+  get "alerts/new" ,             to: "alerts#new",  as: :new_alert
+  post "/alerts",             to: "alerts#create", as: :alerts
 
 
   root 'home#index'
