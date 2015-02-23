@@ -2,8 +2,8 @@
 
 <div id="newsFeeds2">
   <br><br>
-  <h3>News Feeds</h3>
-  <h5>Courtesy Yahoo </h5>
+  <h3 style="font-family: 'Armata', sans-serif;">News Feeds</h3>
+  <h5 style="font-family: 'Armata', sans-serif;">Courtesy Yahoo </h5>
   <% f1 = Feedjira::Feed.fetch_and_parse("http://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo,goog&region=US&lang=en-US") %>
   <% f1.entries.each do |entry| %>
     <li><%= entry.title %></li>
@@ -12,7 +12,7 @@
 </div>
 
 <div>
-  <h3>Ticker News Feeds</h3>
+  <h3 style="font-family: 'Armata', sans-serif;">Ticker News Feeds</h3>
 
 </div>
 
