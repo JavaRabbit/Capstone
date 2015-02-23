@@ -53,6 +53,7 @@
     <td>Buy Price </td>
     <td>Date of Purchase</td>
     <td>Sold Price </td>
+    <td>Cash Value Change</td>
 
   </tr>
 
@@ -67,6 +68,7 @@
       <td><%= t.buyPrice %></td>
       <td><%= t.buyDate %></td>
       <td><%= t.sellPrice %></td>
+      <td><%= ((t.sellPrice - t.buyPrice) * t.numBought).round(2) %></td>
 
     </tr>
     <% end %>
