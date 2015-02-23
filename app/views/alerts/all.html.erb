@@ -8,8 +8,8 @@
 <div class="alerts">
   <h3 style="font-family: 'Armata', sans-serif;">Your Account Alerts </h3>
 
-  <% @user.accounts.each do |a| %>
-    <% if a.alerts.any? %>
+
+    <% if Alert.all.any? %>
       <table border="1" class="tableCenter">
         <col width="130">
         <col width="180">
@@ -22,6 +22,7 @@
           <td>Alert Low</td>
           <td>Notification</td>
         </tr>
+    <% @user.accounts.each do |a| %>
       <% a.alerts.each do |alert| %>
         <tr>
           <td><%= a.name %></td>
@@ -31,8 +32,8 @@
         <tr>
 
       <% end %>
-    </table>
-    <% end %>
+  <% end %>
+  </table>
   <% end %>
 
 
