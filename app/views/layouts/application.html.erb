@@ -50,11 +50,11 @@
   <div class="row">
     <div class="col-md-3" id="theNav">
       <br>
-      <h2>Accounts</h2>
+      <h2><%= link_to "Accounts", root_path %></h2>
       <h2><%= link_to "Transactions", transactions_all_path(current_user.id) %><h2>
       <h2><%= link_to "Watchlist", watchlist_path %></h2>
       <h2><%= link_to "Alerts", all_alerts_path %></h2>
-      <h2><%= link_to "NewsFeed", news_path %></h2>
+      <h2><%= link_to "News Feed", news_path %></h2>
     </div>
 
 <% end %>

@@ -11,7 +11,7 @@ class AlertsController < ApplicationController
   def create
     @alert = Alert.new(alert_params)
     if @alert.save
-      redirect_to root_path
+      redirect_to all_alerts_path
     else
       redirect_to root_path
     end
