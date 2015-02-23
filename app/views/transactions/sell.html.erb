@@ -16,6 +16,7 @@
 
   <%= t.hidden_field :id, value: @transaction.id %>
   <%= t.hidden_field :sellDate, value: Time.current %>
+  <%= t.hidden_field :sellPrice, value: @transaction.sellPrice %>
 
 <%= t.submit "Sell" %>
 
