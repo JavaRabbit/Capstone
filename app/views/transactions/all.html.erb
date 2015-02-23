@@ -1,12 +1,13 @@
 <!-- This is the all transactions page  -->
 <br><br>
-<h3>Open Transactions</h3>
+<div id="allTrans">
+<h3 style="style="text-align: center"">Open Transactions</h3>
 
 <table border="1">
   <tr>
     <td>Sell Stock</td>
     <td>Transaction ID</td>
-    <td>feed_id</td>
+    <td>Ticker Symbol</td>
     <td>Account Name</td>
     <td>Quantity</td>
     <td>Buy Price </td>
@@ -29,13 +30,15 @@
       <td><%= t.buyPrice %></td>
       <td><%= t.buyDate %></td>
       <td><%= gg[0].last_trade_price %></td>
-      <td><%= ( (( gg[0].last_trade_price.to_f - t.buyPrice) / t.buyPrice ) * 100) %></td>
-      <td><%= ( gg[0].last_trade_price.to_f - t.buyPrice ) * t.numBought%></td>
+      <td><%= ( (( gg[0].last_trade_price.to_f - t.buyPrice) / t.buyPrice ) * 100).round(2) %></td>
+      <td><%= (( gg[0].last_trade_price.to_f - t.buyPrice ) * t.numBought).round(2) %></td>
     </tr>
     <% end %>
   <% end %>
 
 </table>
+</div>
+
 
 <br>
 
@@ -44,7 +47,7 @@
 <table border="1">
   <tr>
     <td>Transaction ID</td>
-    <td>feed_id</td>
+    <td>Ticker Symbol</td>
     <td>Account Name</td>
     <td>Quantity</td>
     <td>Buy Price </td>
