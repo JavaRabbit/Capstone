@@ -44,9 +44,9 @@
 
 <div class="alerts">
 <h3 style="font-family: 'Armata', sans-serif;"> Your transaction Alerts </h3>
-  <% bb = Account.where(:user_id => @user.id).each do |b| %>
-    <% b.transactions.each do |t| %>
-      <% if t.alerts.any? %>
+
+
+    <% if Alert.all.any? %>
         <table border="1" class="tableCenter">
           <col width="130">
           <col width="180">
@@ -64,20 +64,23 @@
             <td>Alert Low</td>
             <td>Notification</td>
           </tr>
-        <% t.alerts.each do |a| %>
-          <tr>
-            <td><%= t.id %></td>
-            <td><%= Feed.find(t.feed_id).ticker %></td>
-            <td><%= b.name %></td>
-            <td><%= a.high %></td>
-            <td><%= a.low %></td>
-            <td><%= a.sent %></td>
-          <tr>
 
+      <% bb = Account.where(:user_id => @user.id).each do |b| %>
+        <% b.transactions.each do |t| %>
+              <% t.alerts.each do |a| %>
+                <tr>
+                  <td><%= t.id %></td>
+                  <td><%= Feed.find(t.feed_id).ticker %></td>
+                  <td><%= b.name %></td>
+                  <td><%= a.high %></td>
+                  <td><%= a.low %></td>
+                  <td><%= a.sent %></td>
+                <tr>
+              <% end %>
         <% end %>
-        </table>
       <% end %>
-    <% end %>
+
+    </table>
   <% end %>
 </div>
 
