@@ -1,18 +1,60 @@
-<h3> Welcome <%= @user.email %> to your alerts. </h3>
+<br><br>
 
-<h3>Your Account Alerts </h3>
+<h3 style="font-family: 'Armata', sans-serif;"> Welcome <%= @user.email %> to your alerts. </h3>
 
-<% @user.accounts.each do |a| %>
-  <% if a.alerts.any? %>
-    You have account alerts
+
+
+
+<div class="alerts">
+  <h3 style="font-family: 'Armata', sans-serif;">Your Account Alerts </h3>
+
+  <% @user.accounts.each do |a| %>
+    <% if a.alerts.any? %>
+      <table border="1" class="tableCenter">
+        <col width="130">
+        <col width="180">
+        <col width="130">
+        <col width="130">
+
+        <tr>
+          <td>Account Name</td>
+          <td>Alert High</td>
+          <td>Alert Low</td>
+          <td>Notification</td>
+        </tr>
+      <% a.alerts.each do |alert| %>
+        <tr>
+          <td><%= a.name %></td>
+          <td><%= alert.high %></td>
+          <td><%= alert.low %></td>
+          <td><%= alert.sent %></td>
+        <tr>
+
+      <% end %>
+    </table>
+    <% end %>
   <% end %>
-<% end %>
 
-<h3> Your transaction Alerts </h3>
+
+</div>
+
+<br>
+
+
+<div class="alerts">
+<h3 style="font-family: 'Armata', sans-serif;"> Your transaction Alerts </h3>
   <% bb = Account.where(:user_id => @user.id).each do |b| %>
     <% b.transactions.each do |t| %>
       <% if t.alerts.any? %>
-        <table border="1">
+        <table border="1" class="tableCenter">
+          <col width="130">
+          <col width="180">
+          <col width="130">
+          <col width="130">
+          <col width="130">
+          <col width="130">
+
+
           <tr>
             <td>Transaction ID</td>
             <td>Transaction Ticker</td>
@@ -36,15 +78,26 @@
       <% end %>
     <% end %>
   <% end %>
+</div>
 
-<h3> Your Feed Alerts </h3>
+
+<br>
+
+
+<div class="alerts">
+<h3 style="font-family: 'Armata', sans-serif;"> Your Feed Alerts </h3>
   <% @user.feeds.each do |f| %>
   <% if f.alerts.any? %>
-      <table border="1">
+      <table border="1" class="tableCenter">
+        <col width="130">
+        <col width="180">
+        <col width="130">
+        <col width="130">
         <tr>
           <td>Ticker Name</td>
           <td>Alert High</td>
           <td>Alert Low</td>
+          <td>Notification</td>
         </tr>
 
     <% f.alerts.each do |a| %>
@@ -53,9 +106,11 @@
         <td><%= f.ticker%></td>
         <td><%= a.high %></td>
         <td><%= a.low %></td>
+        <td></td>
       </tr>
     <% end %>
     </table>
 
   <% end %>
 <% end %>
+</div>
