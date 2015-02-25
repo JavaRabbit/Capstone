@@ -7,7 +7,7 @@
   <!-- <% f1 = Feedjira::Feed.fetch_and_parse("http://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo,goog&region=US&lang=en-US") %> -->
   <% f1 = Feedjira::Feed.fetch_and_parse("http://finance.yahoo.com/rss/topfinstories") %>
   <% f1.entries.each do |entry| %>
-    <li><%= entry.title %></li>
+    <li><%= link_to entry.title, entry.url %></li>
   <% end %>
 
 </div>
@@ -36,7 +36,7 @@
 
   <% f1 = Feedjira::Feed.fetch_and_parse(finalStr) %>
   <% f1.entries.each do |entry| %>
-    <li><%= entry.title %></li>
+    <li><%= link_to entry.title, entry.url %></li>
   <% end %>
 
 
