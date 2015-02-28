@@ -36,7 +36,7 @@ class TransactionsController < ApplicationController
   def update
     @transaction = Transaction.find_by(id: params[:id])
     if @transaction.update_attributes(transaction_params)
-      redirect_to root_path
+      redirect_to transactions_all_path
     else
       redirect_to root_path
     end
