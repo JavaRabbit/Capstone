@@ -11,10 +11,12 @@ this is transaction: <%= @transaction.id %>
 
 <h3>The buy price is <%= @transaction.buyPrice %></h3>
 
+<h3>The sell price is <%= @transaction.sellPrice %> </h3>
+
 <%  if @transaction.alerts.any? %>
 
   <h3>Open Alerts</h3>
-  
+
   <% @transaction.alerts.each do |a| %>
     Alert set at <%= a.high %>
   <% end %>
